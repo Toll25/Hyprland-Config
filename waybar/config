@@ -13,9 +13,13 @@
     ],
     "modules-right": [
         "tray",
+        "custom/spacer",
         "network",
+        "custom/spacer",
         "pulseaudio", 
+        "custom/spacer",
         "battery", 
+        "custom/spacer",
         "clock"
     ],
     
@@ -78,5 +82,12 @@
         "tooltip": false,
 		"format": "               ",
 		"on-click": "~/.config/hypr/eww/scripts/toggleDashboard.sh"
+    },
+    "custom/spacer": {
+        "tooltip": false,
+		"format": " "
+    },
+    "cava": {
+        "cava_config": "/home/toll/.config/hypr/cava.conf",
     }
 }
