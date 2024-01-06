@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cliphist list | rofi -dmenu -theme $HOME/.config/hypr/rofi/clipboard.rasi | cliphist decode | wl-copy

@@ -30,7 +30,7 @@
     "clock": {
         "interval": 1,
         "format": "     {:%H:%M:%S%n%d.%m.%G}",
-        "on-click": "eww -c ~/.config/hypr/eww open date --toggle"
+        "on-click": "eww -c ~/.config/hypr/eww open date --toggle  &"
     },
     "battery": {
         "states": {
@@ -81,13 +81,10 @@
     "custom/start": {
         "tooltip": false,
 		"format": "               ",
-		"on-click": "~/.config/hypr/eww/scripts/toggleDashboard.sh"
+		"on-click": "~/.config/hypr/eww/scripts/toggleDashboard.sh &"
     },
     "custom/spacer": {
         "tooltip": false,
 		"format": " "
-    },
-    "cava": {
-        "cava_config": "/home/toll/.config/hypr/cava.conf",
     }
 }

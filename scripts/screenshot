@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+# notify and view screenshot
+notify_view () {
+	notify_cmd_shot='dunstify -u low -h string:x-dunst-stack-tag:obscreenshot -i ~/.config/hypr/assets/picture.png'
+	${notify_cmd_shot} "Copied to clipboard."
+	paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga &>/dev/null &
+	viewnior $output
+	if [[ -e "$output" ]]; then
+		${notify_cmd_shot} "Screenshot Saved."
+	else
+		${notify_cmd_shot} "Screenshot Deleted."
+	fi
+}
+
+# countdown
+countdown () {
+	for sec in `seq $1 -1 1`; do
+		dunstify -t 1000 -h string:x-dunst-stack-tag:screenshottimer -i ~/.config/hypr/assets/timer.png "Taking shot in : $sec"
+		sleep 1
+	done
+}
+
+# take shots
+shotnow () {
+    output=$(grimblast copysave screen)
+	notify_view
+}
+
+shot5 () {
+	countdown '5'
+	sleep 1 && output=$(grimblast copysave screen)
+	notify_view
+}
+
+shot10 () {
+	countdown '10'
+    sleep 1 && output=$(grimblast copysave screen)
+	notify_view
+}
+
+shotactive () {
+    output=$(grimblast copysave active)
+	notify_view
+}
+
+shotarea () {
+    output=$(grimblast copysave area)
+	notify_view
+}
+
+# execute
+if [[ "$1" == "--now" ]]; then
+	shotnow
+elif [[ "$1" == "--in5" ]]; then
+	shot5
+elif [[ "$1" == "--in10" ]]; then
+	shot10
+elif [[ "$1" == "--active" ]]; then
+	shotactive
+elif [[ "$1" == "--area" ]]; then
+	shotarea
+else
+	echo -e "Available Options : --now --in5 --in10 --active --area"
+fi
+
+exit 0
