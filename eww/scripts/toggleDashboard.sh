@@ -1,16 +1,16 @@
 #!/bin/bash
 
-state=$(eww get dashboardIsOpen)
+state=$(eww -c ~/.config/hypr/eww get dashboardIsOpen)
 
 open_control_center() {
-    if [[ -z $(eww list-windows | grep 'dashboard') ]]; then
-        eww open dashboard
+    if [[ -z $(eww -c ~/.config/hypr/eww list-windows | grep 'dashboard') ]]; then
+        eww -c ~/.config/hypr/eww open dashboard
     fi
-    eww update dashboardIsOpen=true
+    eww -c ~/.config/hypr/eww update dashboardIsOpen=true
 }
 
 close_control_center() {
-    eww update dashboardIsOpen=false
+    eww -c ~/.config/hypr/eww update dashboardIsOpen=false
 }
 
 case $1 in
