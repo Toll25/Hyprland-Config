@@ -55,6 +55,54 @@
     padding: 25px;
 
     .firstcol {
+      .musicbox {
+        background-color: $black;
+        border-radius: 12px;
+        .firstrow {
+          padding: 10px;
+          .picbox {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-width: 64px;
+            min-height: 64px;
+            border-radius: 10px;
+          }
+          .info {
+            font-family: Product Sans;
+            .music-title {
+              font-weight: bolder;
+            }
+            .music-artist {
+              color: $fgDim;
+            }
+          }
+        }
+        .lastrow {
+          padding: 10px 0px;
+          background-color: $lightblack;
+          border-bottom-right-radius: 12px;
+          border-bottom-left-radius: 12px;
+          .controls-container {
+            font-size: 16px;
+            font-family: Iosevka Nerd Font;
+            button {
+              transition: all ease .2s;
+              border-radius: 7px;
+              &:hover { background-color: $lightblack; }
+              &:active { background-color: transparent; }
+              &.previousbutton, &.nextbutton { padding: 1px 11px 1px 10px; }
+              &.pausebutton {
+                font-size: 20px;
+                padding: 1px 12px 1px 9px;
+                &.playing {
+                  padding: 1px 14px 1px 7px;
+                }
+              }
+            }
+          }
+        }
+      }
       .usercard {
         background-color: $black;
         border-radius: 12px;
@@ -65,9 +113,9 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: 64px;
-            min-width: 64px;
-            border-radius: 50px;
+            min-height: 112px;
+            min-width: 112px;
+            border-radius: 100%;
           }
           .username {
             font-weight: bolder;
@@ -207,54 +255,6 @@
       }
     }
     .lastcol {
-      .musicbox {
-        background-color: $black;
-        border-radius: 12px;
-        .firstrow {
-          padding: 10px;
-          .picbox {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            min-width: 64px;
-            min-height: 64px;
-            border-radius: 10px;
-          }
-          .info {
-            font-family: Product Sans;
-            .music-title {
-              font-weight: bolder;
-            }
-            .music-artist {
-              color: $fgDim;
-            }
-          }
-        }
-        .lastrow {
-          padding: 10px 0px;
-          background-color: $lightblack;
-          border-bottom-right-radius: 12px;
-          border-bottom-left-radius: 12px;
-          .controls-container {
-            font-size: 16px;
-            font-family: Iosevka Nerd Font;
-            button {
-              transition: all ease .2s;
-              border-radius: 7px;
-              &:hover { background-color: $lightblack; }
-              &:active { background-color: transparent; }
-              &.previousbutton, &.nextbutton { padding: 1px 11px 1px 10px; }
-              &.pausebutton {
-                font-size: 20px;
-                padding: 1px 12px 1px 9px;
-                &.playing {
-                  padding: 1px 14px 1px 7px;
-                }
-              }
-            }
-          }
-        }
-      }
       .chart-container {
         background-color: $black;
         border-radius: 12px;

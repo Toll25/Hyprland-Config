@@ -88,7 +88,7 @@
 
 window#waybar {
     background: rgba(24, 24, 37, 0.75);
-    background-image: url("./noise.png");
+    background-image: url("./../assets/noise.png");
     border-top: 1px solid rgba(64, 64, 64, 0.8);
     color: #cdd6f4;
 }

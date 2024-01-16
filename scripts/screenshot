@@ -5,7 +5,7 @@ notify_view () {
 	notify_cmd_shot='dunstify -u low -h string:x-dunst-stack-tag:obscreenshot -i ~/.config/hypr/assets/picture.png'
 	${notify_cmd_shot} "Copied to clipboard."
 	paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga &>/dev/null &
-	viewnior $output
+	#viewnior $output
 	if [[ -e "$output" ]]; then
 		${notify_cmd_shot} "Screenshot Saved."
 	else

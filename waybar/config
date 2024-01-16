@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "bottom",
-    "height": 48,
+    "height": 38,
     "spacing": 0,
     
     "modules-left": [
@@ -81,7 +81,7 @@
     "custom/start": {
         "tooltip": false,
 		"format": "               ",
-		"on-click": "~/.config/hypr/eww/scripts/toggleDashboard.sh &"
+		"on-click": "~/.config/hypr/scripts/toggleDashboard.sh &"
     },
     "custom/spacer": {
         "tooltip": false,

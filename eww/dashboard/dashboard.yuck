@@ -1,46 +1,3 @@
-(defwidget header []
-  (box :class "headerbox"
-       :orientation "h"
-       :space-evenly false
-    (box :class "userbox"
-         :orientation "h"
-         :space-evenly false
-         :halign "start"
-         :valign "center"
-         :spacing 10
-      (box :class "pfp"
-           :style "background-image: url('${pfp}');")
-      (box :class "pcname"
-           :orientation "h"
-           :space-evenly false
-        (label :text "${rawuser}" :class "username")
-        (label :text "@" :class "sep")
-        (label :text "${hostname}" :class "hostname")
-      )
-    )
-    (box :class "searchbox"
-         :orientation "h"
-         :space-evenly true
-         :halign "end"
-         :hexpand true
-         :valign "center"
-      (button :class "searchinput"
-              :onclick "~/.config/eww/scripts/exec rofi -show drun"
-        (box :class "searchinput-content"
-             :orientation "h"
-             :space-evenly false
-             :hexpand true
-             :halign "start"
-             :valign "center"
-             :vexpand true
-          (label :text "" :class "icon")
-          (label :text "Search Applications" :class "placeholder")
-        )
-      )
-    )
-  )
-)
-
 (defwidget usercard []
   (box :class "usercard"
        :orientation "v"
@@ -86,41 +43,6 @@
   )
 )
 
-(defwidget quicksettings []
-  (box :class "controlscard"
-       :orientation "v"
-       :space-evenly false
-       :spacing 20
-    (box :class "firstrow"
-         :orientation "h"
-         :space-evenly true
-      (control :name "network${network_status == 'Connected' ? '' : '-disconnected'}"
-               :icon "${network_icon}"
-               :tooltip "Toggle network"
-               :active "${network_status == 'Connected' ? 'true' : 'false'}"
-               :onclick "~/.config/eww/scripts/network.sh toggle")
-
-      (control :name "bluetooth${bluetooth_state == 'on' ? '-on' : ''}"
-               :icon "${bluetooth_state == 'on' ? '' : ''}"
-               :tooltip "Toggle bluetooth"
-               :active "${bluetooth_state == 'on' ? true : false}"
-               :onclick "~/.config/eww/scripts/bluetooth toggle")
-
-      (control :name "volume${is_muted == 'yes' ? '-muted' : ''}"
-               :icon "${volume_icon}"
-               :tooltip "Toggle muted"
-               :active "${is_muted == 'yes' ? false : true}"
-               :onclick "~/.config/eww/scripts/volume.sh toggle-muted")
-
-      (control :name "mic${mic_status == 'yes' ? '-on' : ''}"
-               :icon "${mic_status == 'yes' ? '' : ''}"
-               :tooltip "Toggle microphone"
-               :active "${mic_status == 'yes' ? true : false}"
-               :onclick "~/.config/eww/scripts/mic toggle")
-    )
-  )
-)
-
 (defwidget sliders []
   (box :class "slidersbox"
        :orientation "v"
@@ -145,7 +67,7 @@
          :class "br-slider"
       (overlay
         (scale :value br
-               :onchange "~/.config/eww/scripts/brightness.sh set {}"
+               :onchange "~/.config/hypr/scripts/brightness.sh set {}"
                :min 0
                :max 101)
         (label :class "br-label"
@@ -201,17 +123,17 @@
       (box :class "controls-container"
            :orientation "h"
            :space-evenly true
-        (button :onclick "~/.config/eww/scripts/music/control.sh prev"
+        (button :onclick "~/.config/hypr/scripts/scripts/music/control.sh prev"
                 :class "previousbutton"
                 :halign "center"
           "玲"
         )
-        (button :onclick "~/.config/eww/scripts/music/control.sh play-pause"
+        (button :onclick "~/.config/hypr/scripts/scripts/music/control.sh play-pause"
                 :class "pausebutton ${music_status == 'Playing' ? 'playing' : ''}"
                 :halign "center"
           "${music_status == 'Playing' ? '' : ''}"
         )
-        (button :onclick "~/.config/eww/scripts/music/control.sh next"
+        (button :onclick "~/.config/hypr/scripts/scripts/music/control.sh next"
                 :class "nextbutton"
                 :halign "center"
           "怜"
@@ -266,11 +188,6 @@
          :spacing 25
       (chart :label "CPU" :icon "" :icon-class "cpu" :value cpu :value2 cpuPercent)
       (chart :label "RAM" :icon "" :icon-class "ram" :value ram :value2 ramValue)
-    )
-    (box :class "lastrow"
-         :orientation "h"
-         :space-evenly true
-         :spacing 25
       (chart :label "Temp" :icon "" :icon-class "temp" :value temp :value2 tempDegree)
       (chart :label "Disk" :icon "" :icon-class "disk" :value disk :value2 diskUsage)
     )
@@ -295,30 +212,31 @@
 
 (defwidget content []
   (box :class "content-container"
-       :orientation "v"
+       :orientation "h"
        :space-evenly false
     (box :class "contentbox"
-         :orientation "h"
+         :orientation "v"
          :space-evenly true
          :spacing 25
          :vexpand true
       (box :class "firstcol"
-           :orientation "v"
-           :space-evenly false
+           :orientation "h"
+           :space-evenly true
            :spacing 25
         (usercard)
-        (quicksettings)
-        (sliders)
+      
+          (music)
       )
       (box :class "lastcol"
            :orientation "v"
            :space-evenly false
            :spacing 25
-        (music)
-        (charts)
+
+          (charts)
+        
       )
     )
-    
+  
   )
 )
 
@@ -335,8 +253,8 @@
 (defwindow dashboard
   :monitor 0 :geometry (geometry :x "0px"
                       :y "0px"
-                      :width "10px" ; automatically adjusted by eww
-                      :height "10px" ; automatically adjusted by eww
+                      :width "10px" ; automatically adjusted by hypr/scripts
+                      :height "10px" ; automatically adjusted by hypr/scripts
                       :anchor "bottom center")
   :type "dock"
   :wm-ignore false

@@ -17,16 +17,19 @@ path () {
   done
 }
 
-get () {
+get() {
   local path=$(path)
   if [[ $path == "" ]]; then
     path="/sys/class/thermal/thermal_zone0/temp"
   fi
 
   local max_temp=100
-  local temp=$(cat $path)
+  local temp=$(cat "$path")
 
-  jq -n $(jq -n $temp/1000)/$max_temp*100
+  # Calculate the percentage and round down to the nearest integer
+  local percentage=$(printf "%.0f" "$(jq -n "$temp/1000/$max_temp*100")")
+
+  echo "$percentage"
 }
 
 _ () {

@@ -21,7 +21,7 @@ get_ram () {
 }
 
 get_value () {
-  free -m | grep Mem | awk '{print $3 " M"}'
+  free -m | grep Mem | awk '{print $3 " MB"}'
 }
 
 get_percent () {
