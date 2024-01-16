@@ -164,7 +164,7 @@ tooltip label {
     padding-right: 12px;
     padding-left: 5px;
     border-radius: 6px;
-    font-size: 14;
+    font-size: 14px;
 }
 
 #battery.charging {
@@ -176,7 +176,7 @@ tooltip label {
     padding-right: 10px;
     padding-left: 5px;
     border-radius: 6px;
-    font-size: 14;
+    font-size: 14px;
 }
 
 #network {
@@ -184,11 +184,11 @@ tooltip label {
     padding-right: 10px;
     padding-left: 5px;
     border-radius: 6px;
-    font-size: 14;
+    font-size: 14px;
 }
 
 #custom-spacer {
-    font-size: 24;
+    font-size: 24px;
 }
 
 @keyframes blink {

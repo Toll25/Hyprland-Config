@@ -1,28 +1,13 @@
-
-(defpoll network_status :interval "1s" "~/.config/scripts/network.sh status")
-(defpoll network_icon :interval "1s" "~/.config/hypr/scripts/network.sh icon")
-(defpoll network_radio :interval "1s" "~/.config/hypr/scripts/network.sh radio-status")
-(defpoll network_ssid :interval "1s" "~/.config/hypr/scripts/network.sh ssid")
-
 (defpoll volume_icon :interval "1s" "~/.config/hypr/scripts/volume.sh icon")
 (defpoll volume :interval "1s" "~/.config/hypr/scripts/volume.sh percentage")
 (defpoll volume_value :interval "1s" "~/.config/hypr/scripts/volume.sh vol")
 (defpoll is_muted :interval "1s" "~/.config/hypr/scripts/volume.sh muted")
-
-(defpoll mic :interval "1s" "~/.config/hypr/scripts/mic get")
-(defpoll mic_status :interval "1s" "~/.config/hypr/scripts/mic status")
-
-(defpoll bluetooth_state :interval "1s" "~/.config/hypr/scripts/bluetooth state")
-(defpoll redshift_state :interval "1s" "~/.config/hypr/scripts/redshift state")
 
 (defpoll pfp :interval "1s" "~/.config/hypr/scripts/pfp.sh")
 (defpoll rawuser :interval "30s" "whoami")
 (defpoll username :interval "30s" "~/.config/hypr/scripts/user.sh")
 (defpoll hostname :interval "30s" "cat /etc/hostname")
 (defpoll uptime :interval "30s" "uptime -p")
-
-(defpoll br_icon :interval "1s" "~/.config/hypr/scripts/brightness.sh icon")
-(defpoll br :interval "1s" "~/.config/hypr/scripts/brightness.sh br")
 
 (defpoll music_pic :interval "2s" "~/.config/hypr/scripts/music/songart.sh get")
 (defpoll music_url :interval "2s" "~/.config/hypr/scripts/music/songart.sh echo")

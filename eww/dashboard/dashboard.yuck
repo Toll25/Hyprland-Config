@@ -123,17 +123,17 @@
       (box :class "controls-container"
            :orientation "h"
            :space-evenly true
-        (button :onclick "~/.config/hypr/scripts/scripts/music/control.sh prev"
+        (button :onclick "~/.config/hypr/scripts/music/control.sh prev"
                 :class "previousbutton"
                 :halign "center"
           "玲"
         )
-        (button :onclick "~/.config/hypr/scripts/scripts/music/control.sh play-pause"
+        (button :onclick "~/.config/hypr/scripts/music/control.sh play-pause"
                 :class "pausebutton ${music_status == 'Playing' ? 'playing' : ''}"
                 :halign "center"
           "${music_status == 'Playing' ? '' : ''}"
         )
-        (button :onclick "~/.config/hypr/scripts/scripts/music/control.sh next"
+        (button :onclick "~/.config/hypr/scripts/music/control.sh next"
                 :class "nextbutton"
                 :halign "center"
           "怜"
