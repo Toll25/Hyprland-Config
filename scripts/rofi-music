@@ -5,7 +5,7 @@
 # Import Current Theme
 DIR="$HOME/.config/openbox"
 STYLE="myTheme"
-RASI="$DIR/themes/$STYLE/rofi/music.rasi"
+RASI="~/.config/hypr/rofi/music.rasi"
 
 # Theme Elements
 status="`mpc status`"

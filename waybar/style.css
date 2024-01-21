@@ -153,38 +153,33 @@ tooltip label {
     border-bottom: 1px solid #cdd6f4;
 }
 
-#clock {
-    padding-left: 3px;
-    padding-right: 18px;
-    font-size: 13px;
-}
-
-#battery {
-    margin:5px;
-    padding-right: 12px;
+#network {
     padding-left: 5px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-#battery.charging {
-    color: #a6e3a1;
+    padding-right: 10px
 }
 
 #pulseaudio {
-    margin:5px;
-    padding-right: 10px;
     padding-left: 5px;
-    border-radius: 6px;
-    font-size: 14px;
-}
+    padding-right: 10px}
 
-#network {
-    margin:5px;
-    padding-right: 10px;
+#backlight {
     padding-left: 5px;
-    border-radius: 6px;
-    font-size: 14px;
+    padding-right: 10px}
+
+#bluetooth {
+    padding-left: 5px;
+    padding-right: 10px}
+
+#clock {
+    padding-left: 5px;
+    padding-right: 10px}
+
+#battery {
+    padding-left: 5px;
+    padding-right: 10px}
+
+#battery.charging {
+    color: #a6e3a1;
 }
 
 #custom-spacer {

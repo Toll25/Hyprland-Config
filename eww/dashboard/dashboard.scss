@@ -89,7 +89,7 @@
             button {
               transition: all ease .2s;
               border-radius: 7px;
-              &:hover { background-color: $lightblack; }
+              &:hover { background-color: $black; }
               &:active { background-color: transparent; }
               &.previousbutton, &.nextbutton { padding: 1px 11px 1px 10px; }
               &.pausebutton {

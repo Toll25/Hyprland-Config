@@ -19,7 +19,7 @@
 # Import Current Theme
 DIR="$HOME/.config/openbox"
 STYLE="myTheme"
-RASI="$DIR/themes/$STYLE/rofi/bluetooth.rasi"
+RASI="~/.config/hypr/rofi/bluetooth.rasi"
 
 # Constants
 divider="---------"

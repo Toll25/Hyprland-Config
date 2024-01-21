@@ -5,9 +5,9 @@
 # Import Current Theme
 DIR="$HOME/.config/openbox"
 STYLE="myTheme"
-RASI="$DIR/themes/$STYLE/rofi/launcher.rasi"
+RASI="~/.config/hypr/rofi/launcher.rasi"
 
 # Run
 rofi \
     -show drun \
-	-theme ${RASI}
+	-theme "~/.config/hypr/rofi/launcher.rasi"

@@ -14,9 +14,13 @@
     "modules-right": [
         "tray",
         "custom/spacer",
+        "bluetooth",
+        "custom/spacer",
         "network",
         "custom/spacer",
         "pulseaudio", 
+        "custom/spacer",
+        "backlight",
         "custom/spacer",
         "battery", 
         "custom/spacer",
@@ -29,7 +33,7 @@
     },
     "clock": {
         "interval": 1,
-        "format": "    {:%H:%M:%S%n%d.%m.%G}",
+        "format": "{:%H:%M:%S%n%d.%m.%G}",
         "on-click": "eww -c ~/.config/hypr/eww open date --toggle  &"
     },
     "battery": {
@@ -38,7 +42,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󱐋",
         "format-plugged": "{capacity}% ",
         "format-icons": ["", "", "", "", ""],
         "on-click": "gnome-power-statistics"
@@ -61,8 +65,6 @@
         "format-muted": "Mute ",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -70,10 +72,24 @@
         },
         "on-click": "pamixer -t"
     },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+    "bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        "format": " {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections} connected",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
+    },
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 24,
-        //"icon-theme": "Win11-Dark",
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close"
